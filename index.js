@@ -19,10 +19,10 @@ function is_prime(number) {
     }
   }
   if (is_no_prime) {
-    console.log(">>" + chalk.bgGreen(userName + ", Your birthday is a prime number."))
+    console.log("\n>>" + chalk.bgGreen(userName + ", Your birthday is a prime number."))
   }
   else {
-    console.log(">>" + chalk.bgRed(userName + ", Your birthday is not a prime number."))
+    console.log("\n>>" + chalk.bgRed(userName + ", Your birthday is not a prime number."))
   }
 }
 
@@ -35,15 +35,8 @@ for(i=0;i<50;i++) //validating day and month or looping back the question.
   // console.log(Number.isInteger(day))
   // console.log(Number.isInteger(month))
 
-if (day != 0 && Number.isInteger(day) && Number.isInteger(month) && month <= months && day <= daysInMonth[month - 1]) 
-{
-  break;
+if (day != 0 && Number.isInteger(day) && Number.isInteger(month) && month <= months && day <= daysInMonth[month - 1]) {break;}
+else {console.log(chalk.bgRed("ERROR! Date is Invalid"))}
 }
-else
-{
-   console.log(chalk.bgRed("ERROR! Date is Invalid"))
-}
-}
+
 is_prime(Number(day))
-
-
