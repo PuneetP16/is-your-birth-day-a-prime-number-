@@ -13,7 +13,7 @@ var userName = readlineSync.question(chalk.bgCyan("What's your name?") + "\n>")
 
 function is_prime(number) {
   var is_no_prime = true;
-  for (i=2;i<(number + 1);i++) {
+  for (i=2;i<number;i++) {
     if (number % i === 0) {
       is_no_prime = false
     }
@@ -29,11 +29,11 @@ function is_prime(number) {
 for(i=0;i<50;i++) //validating day and month or looping back the question.
 {
   var dateList = (readlineSync.question("\n" + chalk.bgMagenta("What's your Birth date? (Type in format: DD/MM)") + "\n>" )).split("/");
-  console.log(dateList)
+  // console.log(dateList)
   var day = Number(dateList[0]);
   var month = Number(dateList[1]);  
-  console.log(Number.isInteger(day))
-  console.log(Number.isInteger(month))
+  // console.log(Number.isInteger(day))
+  // console.log(Number.isInteger(month))
 
 if (day != 0 && Number.isInteger(day) && Number.isInteger(month) && month <= months && day <= daysInMonth[month - 1]) 
 {
@@ -44,6 +44,6 @@ else
    console.log(chalk.bgRed("ERROR! Date is Invalid"))
 }
 }
-is_prime(day)
+is_prime(Number(day))
 
 
